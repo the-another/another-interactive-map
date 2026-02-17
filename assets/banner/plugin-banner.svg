@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1544 500" width="1544" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1B2838"/>
+      <stop offset="100%" stop-color="#2C3E50"/>
+    </linearGradient>
+    <linearGradient id="mapGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C8D6E5" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#C8D6E5" stop-opacity="0.05"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softShadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <clipPath id="bannerClip">
+      <rect width="1544" height="500" rx="0"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1544" height="500" fill="url(#bg)"/>
+
+  <!-- Subtle grid pattern -->
+  <g opacity="0.04" stroke="#fff" stroke-width="0.5">
+    <line x1="0" y1="100" x2="1544" y2="100"/>
+    <line x1="0" y1="200" x2="1544" y2="200"/>
+    <line x1="0" y1="300" x2="1544" y2="300"/>
+    <line x1="0" y1="400" x2="1544" y2="400"/>
+    <line x1="200" y1="0" x2="200" y2="500"/>
+    <line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="600" y1="0" x2="600" y2="500"/>
+    <line x1="800" y1="0" x2="800" y2="500"/>
+    <line x1="1000" y1="0" x2="1000" y2="500"/>
+    <line x1="1200" y1="0" x2="1200" y2="500"/>
+    <line x1="1400" y1="0" x2="1400" y2="500"/>
+  </g>
+
+  <!-- Simplified North America silhouette (right side, large) -->
+  <g transform="translate(820, -20) scale(1.95)" opacity="0.12" fill="#C8D6E5">
+    <!-- Canada rough outline -->
+    <path d="M60,80 L80,60 L120,55 L160,50 L200,55 L240,45 L260,50 L280,60 L300,55 L320,65 L340,60 L350,70 L340,85 L320,90 L300,85 L280,95 L260,90 L240,100 L220,95 L200,105 L180,100 L160,110 L140,105 L120,95 L100,100 L80,90 Z"/>
+    <!-- US rough outline -->
+    <path d="M80,90 L100,100 L120,95 L140,105 L160,110 L180,100 L200,105 L220,95 L240,100 L260,105 L280,110 L290,130 L285,150 L270,165 L260,180 L240,190 L220,185 L200,195 L180,200 L160,195 L140,200 L120,195 L100,190 L85,175 L75,155 L70,135 L72,115 L80,90 Z"/>
+  </g>
+
+  <!-- Decorative map fragments (interactive states) -->
+  <g transform="translate(900, 60)" filter="url(#softShadow)">
+    <!-- State shape 1 - highlighted -->
+    <path d="M0,0 L45,5 L50,35 L55,70 L30,75 L5,65 L-5,30 Z" fill="#C8D6E5" opacity="0.6" stroke="#fff" stroke-width="1"/>
+    <!-- State shape 2 -->
+    <path d="M50,35 L95,25 L105,60 L100,80 L55,70 Z" fill="#5DADE2" opacity="0.5" stroke="#fff" stroke-width="1"/>
+    <!-- State shape 3 -->
+    <path d="M95,25 L140,15 L155,50 L145,75 L105,60 Z" fill="#C8D6E5" opacity="0.4" stroke="#fff" stroke-width="1"/>
+  </g>
+
+  <g transform="translate(1050, 120)" filter="url(#softShadow)">
+    <!-- State shape 4 -->
+    <path d="M0,0 L50,10 L60,50 L40,70 L-10,55 L-15,20 Z" fill="#C8D6E5" opacity="0.35" stroke="#fff" stroke-width="1"/>
+    <!-- State shape 5 - hover state -->
+    <path d="M50,10 L100,5 L115,40 L105,65 L60,50 Z" fill="#5DADE2" opacity="0.55" stroke="#fff" stroke-width="1"/>
+    <!-- State shape 6 -->
+    <path d="M100,5 L150,15 L155,55 L140,75 L115,40 Z" fill="#C8D6E5" opacity="0.3" stroke="#fff" stroke-width="1"/>
+  </g>
+
+  <g transform="translate(1150, 240)" filter="url(#softShadow)">
+    <!-- State shape 7 -->
+    <path d="M0,0 L55,8 L60,45 L35,60 L-5,50 Z" fill="#C8D6E5" opacity="0.3" stroke="#fff" stroke-width="1"/>
+    <!-- State shape 8 -->
+    <path d="M55,8 L110,0 L120,35 L100,55 L60,45 Z" fill="#C8D6E5" opacity="0.25" stroke="#fff" stroke-width="1"/>
+  </g>
+
+  <!-- Hover cursor indicator -->
+  <g transform="translate(1000, 95)" filter="url(#glow)">
+    <!-- Cursor arrow -->
+    <path d="M0,0 L0,24 L7,18 L12,28 L16,26 L11,16 L19,16 Z" fill="#fff" opacity="0.9"/>
+  </g>
+
+  <!-- Color swatches (showing customization) -->
+  <g transform="translate(1320, 340)">
+    <rect x="0" y="0" width="28" height="28" rx="6" fill="#EBECED" stroke="#fff" stroke-width="1.5" opacity="0.9"/>
+    <rect x="36" y="0" width="28" height="28" rx="6" fill="#C8D6E5" stroke="#fff" stroke-width="1.5" opacity="0.9"/>
+    <rect x="72" y="0" width="28" height="28" rx="6" fill="#5DADE2" stroke="#fff" stroke-width="1.5" opacity="0.9"/>
+    <rect x="108" y="0" width="28" height="28" rx="6" fill="#2C3E50" stroke="#fff" stroke-width="1.5" opacity="0.9"/>
+  </g>
+
+  <!-- Plugin name -->
+  <g transform="translate(80, 155)">
+    <text font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="64" font-weight="700" fill="#FFFFFF" letter-spacing="-1">
+      <tspan x="0" y="0">Another</tspan>
+      <tspan x="0" y="76">Interactive Map</tspan>
+    </text>
+  </g>
+
+  <!-- Tagline -->
+  <text x="80" y="320" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="24" fill="#C8D6E5" opacity="0.8" letter-spacing="0.5">
+    Interactive SVG map block for WordPress
+  </text>
+
+  <!-- Feature pills -->
+  <g transform="translate(80, 360)">
+    <rect x="0" y="0" width="160" height="36" rx="18" fill="#fff" fill-opacity="0.1" stroke="#C8D6E5" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="80" y="23" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" fill="#C8D6E5" text-anchor="middle" opacity="0.9">63 Regions</text>
+
+    <rect x="176" y="0" width="200" height="36" rx="18" fill="#fff" fill-opacity="0.1" stroke="#C8D6E5" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="276" y="23" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" fill="#C8D6E5" text-anchor="middle" opacity="0.9">Custom Colors</text>
+
+    <rect x="392" y="0" width="200" height="36" rx="18" fill="#fff" fill-opacity="0.1" stroke="#C8D6E5" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="492" y="23" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" fill="#C8D6E5" text-anchor="middle" opacity="0.9">Click Actions</text>
+  </g>
+
+  <!-- WP + Gutenberg badge -->
+  <g transform="translate(80, 420)">
+    <rect x="0" y="0" width="180" height="32" rx="16" fill="#0073AA" fill-opacity="0.25" stroke="#0073AA" stroke-opacity="0.4" stroke-width="1"/>
+    <text x="90" y="21" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" fill="#5DADE2" text-anchor="middle" font-weight="600">Gutenberg Block</text>
+  </g>
+</svg>

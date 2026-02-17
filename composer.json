@@ -1,0 +1,80 @@
+{
+  "name": "theanother/interactive-map",
+  "description": "Plugin for interactive map management in WordPress, allowing users to create and manage interactive maps with various features and customization options.",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-or-later",
+  "version": "1.0.0",
+  "author": {
+    "name": "The Another",
+    "email": "hello@theanother.org",
+    "url": "https://theanother.org"
+  },
+  "keywords": [
+    "wordpress",
+    "plugin",
+    "management",
+    "map"
+  ],
+  "homepage": "https://theanother.org/plugin/interactive-map/",
+  "support": {
+    "issues": "https://github.com/theanother/interactive-map/issues",
+    "source": "https://github.com/theanother/interactive-map"
+  },
+  "require": {
+    "php": ">=8.3"
+  },
+  "require-dev": {
+    "automattic/vipwpcs": "^3.0",
+    "brain/monkey": "^2.6",
+    "coenjacobs/mozart": "^0.7.1",
+    "composer/composer": "^2.7",
+    "johnpbloch/wordpress-core": "^6.9",
+    "mockery/mockery": "^1.6",
+    "php-stubs/woocommerce-stubs": "^10.4",
+    "php-stubs/wordpress-stubs": "^6.9",
+    "phpunit/phpunit": "^11.0",
+    "squizlabs/php_codesniffer": "^3.9",
+    "wp-coding-standards/wpcs": "^3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "The_Another\\Plugin\\Interactive_Map\\Dependencies\\": "dependencies/"
+    },
+    "classmap": [
+      "includes/"
+    ],
+    "files": []
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "The_Another\\Plugin\\Interactive_Map\\Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    },
+    "sort-packages": true
+  },
+  "extra": {
+    "mozart": {
+      "dep_namespace": "The_Another\\Plugin\\Interactive_Map\\Dependencies\\",
+      "dep_directory": "/dependencies/",
+      "classmap_directory": "/includes/classes/",
+      "classmap_prefix": "The_Another_Plugin_Interactive_Map_",
+      "packages": []
+    }
+  },
+  "scripts": {
+    "phpcs": "phpcs",
+    "phpcbf": "phpcbf",
+    "test": "phpunit",
+    "mozart": "mozart compose && node scripts/move-production-vendor.js",
+    "build": [
+      "composer update -q --no-suggest",
+      "@composer mozart",
+      "node scripts/remove-vendor.js",
+      "@composer dump-autoload"
+    ]
+  }
+}

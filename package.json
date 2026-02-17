@@ -1,0 +1,42 @@
+{
+  "name": "anoteher-interactive-map",
+  "version": "1.0.0",
+  "description": "Plugin for interactive map management in WordPress, allowing users to create and manage interactive maps with various features and customization options",
+  "private": true,
+  "scripts": {
+    "build": "wp-scripts build --config webpack.config.js",
+    "start": "wp-scripts start --config webpack.config.js",
+    "lint:js": "wp-scripts lint-js blocks/*/src/*.js",
+    "lint:css": "wp-scripts lint-style blocks/*/src/*.css",
+    "format": "wp-scripts format blocks/*/src/*.js",
+    "plugin-zip": "composer build && npm run build && wp-scripts plugin-zip > /dev/null 2>&1 && node scripts/version-zip.js",
+    "version": "node scripts/version-bump.js",
+    "version:patch": "node scripts/version-bump.js patch",
+    "version:minor": "node scripts/version-bump.js minor",
+    "version:major": "node scripts/version-bump.js major"
+  },
+  "devDependencies": {
+    "@babel/runtime": "^7.28.4",
+    "@wordpress/scripts": "^28.0.0"
+  },
+  "dependencies": {
+    "@wordpress/interactivity": "^6.0.0",
+    "jquery": "^3.7.1"
+  },
+  "files": [
+    "another-interactive-map.php",
+    "composer.json",
+    "README.md",
+    "readme.txt",
+    "assets",
+    "blocks/**/block.json",
+    "blocks/**/render.php",
+    "!blocks/**/index.js",
+    "!blocks/**/editor.scss",
+    "dist",
+    "includes/**",
+    "languages",
+    "vendor/autoload.php",
+    "vendor/composer"
+  ]
+}

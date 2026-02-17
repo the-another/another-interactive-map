@@ -1,0 +1,15 @@
+/**
+ * Editor-only styles.
+ *
+ * @package Another_Interactive_Map
+ */
+
+/* Disable pointer events on the SVG preview in the editor. */
+.wp-block-another-interactive-map-interactive-map .another-interactive-map__svg-container {
+	pointer-events: none;
+}
+
+/* Ensure ServerSideRender has a minimum height while loading. */
+.wp-block-another-interactive-map-interactive-map .components-server-side-render {
+	min-height: 200px;
+}

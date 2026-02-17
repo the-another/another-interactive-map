@@ -1,0 +1,74 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "another-interactive-map/interactive-map",
+	"version": "0.0.1",
+	"title": "Interactive Map",
+	"category": "another-interactive-map",
+	"icon": "location-alt",
+	"description": "An interactive map of the US and Canada with configurable click actions.",
+	"textdomain": "another-interactive-map",
+	"attributes": {
+		"fillColor": {
+			"type": "string",
+			"default": "#EBECED"
+		},
+		"fillColorHover": {
+			"type": "string",
+			"default": "#C8D6E5"
+		},
+		"strokeColor": {
+			"type": "string",
+			"default": "#FFFFFF"
+		},
+		"strokeColorHover": {
+			"type": "string",
+			"default": "#FFFFFF"
+		},
+		"textColor": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"textColorHover": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"clickAction": {
+			"type": "string",
+			"default": "callback"
+		},
+		"callbackFunctionName": {
+			"type": "string",
+			"default": "onMapStateClick"
+		},
+		"webhookIsExternal": {
+			"type": "boolean",
+			"default": false
+		},
+		"webhookBaseUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"webhookPath": {
+			"type": "string",
+			"default": "/states/"
+		},
+		"webhookFormat": {
+			"type": "string",
+			"default": "state-slug"
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"editorScript": "file:../../dist/blocks/interactive-map/editor.js",
+	"viewScript": "file:../../dist/blocks/interactive-map/view.js",
+	"style": "file:../../dist/blocks/interactive-map/style-editor.css",
+	"editorStyle": "file:../../dist/blocks/interactive-map/editor.css",
+	"render": "file:./render.php"
+}
