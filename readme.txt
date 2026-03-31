@@ -10,6 +10,17 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 An interactive SVG map of the US and Canada as a Gutenberg block, with configurable colors and click actions.
 
+== Installation ==
+
+1. Upload the `another-interactive-map` folder to the `/wp-content/plugins/` directory, or install directly through the WordPress plugin screen.
+2. Activate the plugin through the "Plugins" screen in WordPress.
+3. In the block editor, add the **Interactive Map** block from the "Another Interactive Map" category.
+
+== Screenshots ==
+
+1. Interactive map block in the editor with color and click-action settings.
+2. Map rendered on the frontend with hover effect.
+
 == Description ==
 
 Another Interactive Map adds a Gutenberg block that renders an interactive inline SVG map covering all 50 US states and 13 Canadian provinces and territories.
@@ -65,8 +76,9 @@ Choose between Callback mode (calls a JavaScript function you define) or Webhook
 
 
 = 1.0.0 - 2026-02-17 =
-* Version bump
-
-= 0.0.1 =
-* Initial release.
-* Interactive SVG map block with color settings and click actions.
+* First stable release.
+* Interactive inline SVG map block covering 50 US states and 13 Canadian provinces/territories.
+* Theme-aware color picker for fill, stroke, and text colors with hover variants.
+* Callback click mode — calls a configurable global JavaScript function with region data.
+* Webhook click mode — navigates to a URL built from region slug, code, or country-prefixed format.
+* Fully responsive SVG rendering.

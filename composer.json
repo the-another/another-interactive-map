@@ -17,8 +17,8 @@
   ],
   "homepage": "https://theanother.org/plugin/interactive-map/",
   "support": {
-    "issues": "https://github.com/theanother/interactive-map/issues",
-    "source": "https://github.com/theanother/interactive-map"
+    "issues": "https://github.com/the-another/another-interactive-map/issues",
+    "source": "https://github.com/the-another/another-interactive-map"
   },
   "require": {
     "php": ">=8.3"
