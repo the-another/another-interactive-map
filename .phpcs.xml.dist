@@ -4,7 +4,7 @@
 
 	<!-- What to scan -->
 	<file>./includes</file>
-	<file>./aucteeno.php</file>
+	<file>./another-interactive-map.php</file>
 	<exclude-pattern>*/vendor/*</exclude-pattern>
 	<exclude-pattern>*/dependencies/*</exclude-pattern>
 	<exclude-pattern>*/node_modules/*</exclude-pattern>
