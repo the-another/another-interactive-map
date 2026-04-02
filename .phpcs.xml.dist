@@ -32,6 +32,8 @@
 	<!-- Use Automattic VIP Coding Standards -->
 	<rule ref="WordPress-VIP-Go">
 		<exclude name="WordPressVIPMinimum.Functions.RestrictedFunctions"/>
+		<!-- Exclude JS sniffs — only PHP is scanned; these trigger deprecation warnings in PHPCS 3.x. -->
+		<exclude name="WordPressVIPMinimum.JS"/>
 	</rule>
 
 	<!-- Custom rules -->

@@ -26,7 +26,7 @@ namespace The_Another\Plugin\Interactive_Map;
 use Exception;
 
 if ( ! defined( 'ABSPATH' ) ) {
-    exit;
+	exit;
 }
 
 // Define plugin constants.
@@ -41,17 +41,17 @@ require_once ANOTHER_INTERACTIVE_MAP_DIR . 'vendor/autoload.php';
 
 // Initialize plugin on plugins_loaded.
 add_action(
-    'plugins_loaded',
-    function () {
-        try {
-            Interactive_Map::get_instance()->start();
-        } catch ( Exception $e ) {
-            // Use plain string for error title to avoid translation issues during fatal errors.
-            wp_die(
-                esc_html( $e->getMessage() ),
-                'Another Interactive Map Error',
-                array( 'response' => 500 )
-            );
-        }
-    }
+	'plugins_loaded',
+	function () {
+		try {
+			Interactive_Map::get_instance()->start();
+		} catch ( Exception $e ) {
+			// Use plain string for error title to avoid translation issues during fatal errors.
+			wp_die(
+				esc_html( $e->getMessage() ),
+				'Another Interactive Map Error',
+				array( 'response' => 500 )
+			);
+		}
+	}
 );

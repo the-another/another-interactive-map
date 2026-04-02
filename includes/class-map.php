@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Interactive Map Main Class
  *
@@ -13,6 +12,11 @@ namespace The_Another\Plugin\Interactive_Map;
 
 use Exception;
 
+/**
+ * Class Map
+ *
+ * Provides static utility methods for reading and processing the SVG map.
+ */
 class Map {
 
 	/**
@@ -27,7 +31,7 @@ class Map {
 			return '';
 		}
 
-		$content = file_get_contents( $svg_path ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+		$content = file_get_contents( $svg_path ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents, WordPressVIPMinimum.Performance.FetchingRemoteData.FileGetContentsUnknown -- local file, not remote
 
 		if ( false === $content ) {
 			return '';
