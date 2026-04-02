@@ -3,7 +3,7 @@
  * Plugin Name: Another Interactive Map
  * Plugin URI: https://theanother.org/plugin/interactive-map/
  * Description: Shows interactive map of the US and Canada with options how to proceed with link click.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: The Another
  * Author URI: https://theanother.org
  * Requires at least: 6.9
@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Define plugin constants.
-define( 'ANOTHER_INTERACTIVE_MAP_VERSION', '1.0.0' );
+define( 'ANOTHER_INTERACTIVE_MAP_VERSION', '1.0.1' );
 define( 'ANOTHER_INTERACTIVE_MAP_FILE', __FILE__ );
 define( 'ANOTHER_INTERACTIVE_MAP_DIR', plugin_dir_path( __FILE__ ) );
 define( 'ANOTHER_INTERACTIVE_MAP_URL', plugin_dir_url( __FILE__ ) );

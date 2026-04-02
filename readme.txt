@@ -4,7 +4,7 @@ Tags: map, interactive map, gutenberg, block, svg
 Requires at least: 6.9
 Tested up to: 6.9
 Requires PHP: 8.3
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -74,6 +74,9 @@ Choose between Callback mode (calls a JavaScript function you define) or Webhook
 
 == Changelog ==
 
+= 1.0.1 - 2026-04-02 =
+* Added automated E2E testing with Playwright and WordPress Playground.
+* Refactored CI workflow to be reusable across CI and release pipelines.
 
 = 1.0.0 - 2026-02-17 =
 * First stable release.

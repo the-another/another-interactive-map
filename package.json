@@ -1,6 +1,6 @@
 {
   "name": "another-interactive-map",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Plugin for interactive map management in WordPress, allowing users to create and manage interactive maps with various features and customization options",
   "private": true,
   "scripts": {
