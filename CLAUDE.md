@@ -86,6 +86,14 @@ Compiled assets go to `dist/blocks/interactive-map/` — referenced by `block.js
 
 PHPUnit 11 with Brain\Monkey for WordPress function mocking and Mockery for object mocking. Tests run without WordPress loaded. Bootstrap in `tests/bootstrap.php` defines required WordPress constants.
 
+### E2E Tests (Playwright + WordPress Playground)
+
+```bash
+npm run test:e2e        # Run all e2e tests (starts wp-now automatically)
+npm run test:e2e:ui     # Run with Playwright UI mode
+npx playwright install  # Install browser binaries (first time)
+```
+
 ## Mozart
 
 Dependencies listed in `extra.mozart.packages` in `composer.json` get namespace-prefixed to `The_Another\Plugin\Interactive_Map\Dependencies\` and placed in `/dependencies/`. Currently no packages are configured for Mozart prefixing.
