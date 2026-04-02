@@ -3,7 +3,7 @@
   "description": "Plugin for interactive map management in WordPress, allowing users to create and manage interactive maps with various features and customization options.",
   "type": "wordpress-plugin",
   "license": "GPL-2.0-or-later",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "The Another",
     "email": "hello@theanother.org",
