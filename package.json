@@ -23,6 +23,9 @@
     "@wordpress/interactivity": "^6.0.0",
     "jquery": "^3.7.1"
   },
+  "overrides": {
+    "fsevents": "2.3.3"
+  },
   "files": [
     "another-interactive-map.php",
     "composer.json",
