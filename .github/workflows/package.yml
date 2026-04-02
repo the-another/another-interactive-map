@@ -10,52 +10,17 @@ permissions:
   contents: write
 
 jobs:
-  test:
+  ci:
     name: Test Gate
-    runs-on: ubuntu-latest
     if: >-
       github.event_name == 'workflow_dispatch' ||
       (github.event.pull_request.merged == true)
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.3'
-          extensions: mbstring, xml, zip, curl, dom, tokenizer, intl, iconv
-          tools: composer:v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-
-      - name: Install Composer dependencies
-        run: composer install --prefer-dist --no-progress
-
-      - name: Install npm dependencies
-        run: npm ci
-
-      - name: Run PHPUnit
-        run: ./vendor/bin/phpunit
-
-      - name: Run PHPCS
-        run: ./vendor/bin/phpcs
-
-      - name: Lint JavaScript
-        run: npm run lint:js
-
-      - name: Lint CSS
-        run: npm run lint:css
+    uses: ./.github/workflows/ci.yml
 
   release:
     name: Build & Release
     runs-on: ubuntu-latest
-    needs: [test]
+    needs: [ci]
     if: >-
       github.event_name == 'workflow_dispatch' ||
       (github.event.pull_request.merged == true)
@@ -95,7 +60,7 @@ jobs:
         if: steps.tag_check.outputs.exists == 'false'
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
 
       - name: Install dependencies and build

@@ -3,6 +3,7 @@ name: CI
 on:
   pull_request:
     branches: [master]
+  workflow_call:
   workflow_dispatch:
 
 permissions:
@@ -73,3 +74,50 @@ jobs:
 
       - name: Lint CSS
         run: npm run lint:css
+
+  e2e:
+    name: E2E Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, xml, zip, curl, dom, tokenizer, intl, iconv
+          tools: composer:v2
+
+      - name: Install Composer dependencies
+        run: composer install --prefer-dist --no-progress
+
+      - name: Build PHP (Mozart)
+        run: composer build
+
+      - name: Install npm dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install chromium
+
+      - name: Build plugin assets
+        run: npm run build
+
+      - name: Run E2E tests
+        run: npm run test:e2e
+
+      - name: Upload test artifacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: e2e-test-results
+          path: test-results/
+          retention-days: 7
