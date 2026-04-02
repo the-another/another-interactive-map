@@ -19,28 +19,28 @@
 	display: block;
 }
 
-/* State / province paths — colors via CSS custom properties set on the wrapper. */
+/* State / province paths — colors via custom properties on the wrapper. */
 .wp-block-another-interactive-map-interactive-map #states path {
-	fill: var(--map-fill, #EBECED);
-	stroke: var(--map-stroke, #FFFFFF);
+	fill: var(--map-fill, #ebeced);
+	stroke: var(--map-stroke, #fff);
 	stroke-width: 0.7;
 	cursor: pointer;
 	transition: fill 0.2s ease, stroke 0.2s ease;
 }
 
 .wp-block-another-interactive-map-interactive-map #states path:hover {
-	fill: var(--map-fill-hover, #C8D6E5);
-	stroke: var(--map-stroke-hover, #FFFFFF);
+	fill: var(--map-fill-hover, #c8d6e5);
+	stroke: var(--map-stroke-hover, #fff);
 }
 
 /* Abbreviation labels — colors via CSS custom properties. */
 .wp-block-another-interactive-map-interactive-map #abbs text {
-	fill: var(--map-text, #000000);
+	fill: var(--map-text, #000);
 	transition: fill 0.2s ease;
 }
 
 .wp-block-another-interactive-map-interactive-map #abbs text:hover {
-	fill: var(--map-text-hover, #000000);
+	fill: var(--map-text-hover, #000);
 }
 
 /* Non-interactive SVG groups. */
